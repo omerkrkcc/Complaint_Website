@@ -4,9 +4,9 @@ We have developed a project where users can submit their complaints about the se
 
 <h2>Technologies Used </h2>
 
-• <br>HTML </br>
-• <br>CSS </br>
-• <br>JavaScript </br>
+<br>•HTML</br>
+<br>•CSS</br>
+<br>•JavaScript</br>
 
 <h2>Overview</h2>
 
