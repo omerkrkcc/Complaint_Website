@@ -1,0 +1,563 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ProfilVeSikayetler</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
+      crossorigin="anonymous"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+    
+  </head>
+  <body>
+    <style>
+    *{
+      text-decoration: none;
+      color:inherit; 
+      box-sizing:border-box;
+      }
+      body{
+        background-image: linear-gradient(to right, #d16ba5, #c777b9, #ba83ca, #aa8fd8, #9a9ae1, #8aa7ec, #79b3f4, #69bff8, #52cffe, #41dfff, #46eefa, #5ffbf1);
+      font-family:'Poppins',sans-serif;
+      font-size:14px;
+      height:100vh;
+      display: flex;
+      }
+      .yan-menu{
+          height:100%;
+          width:260px;
+          flex-shrink:0;  
+          padding:48px;
+          background-color:#f8f8ff;
+
+          display:flex;
+          flex-direction:column;
+      }
+      .profil{
+          display:flex;
+          align-items:center;
+          gap: 14px;
+          margin-bottom:48px;
+      }
+
+      .profil-body h2{
+          font-size:16px;
+          color:#1a194d;
+          font-weight:700;
+          margin-bottom:4px;
+      }
+      nav{
+          flex:1; 
+          display:flex;
+          flex-direction:column;
+          gap:8px;
+      }
+      nav .nav-item{
+          display: flex;
+          align-items:center;
+          gap:10px;
+          padding:8px 16px 8px 0;
+      } 
+      nav .nav-item.active{
+          color:#1a194d;
+          position:relative;
+      }
+      nav .nav-item.active::before{
+          content:""; 
+          display:block;
+          width:6px;
+          background-color:orange;
+          position:absolute;
+          left: -16px;
+          top:0;
+          bottom:0;
+      }
+      nav .nav-item:last-child{
+      margin-top:auto; 
+      }
+
+      .form-control {
+          box-shadow: none;
+          border-radius:30px;
+          border-color: #3b3b3b;
+        }
+        .labels {
+          font-size: 11px
+        }
+        textarea{
+          -webkit-text-size-adjust: 100%;
+          -webkit-font-smoothing: antialiased;
+          box-sizing: inherit;
+          font-family: inherit;
+          margin: 0;
+          overflow: auto;
+          align-items: center;
+          border: 1px solid transparent;
+          font-size: 1rem;
+          justify-content: flex-start;
+          line-height: 1.5;
+          position: relative;
+          box-shadow: inset 0 .0625em .125em rgba(10,10,10,.05);
+          width: 100%;
+          display: block;
+          max-width: 100%;
+          min-width: 100%;
+          padding: calc(.75em - 1px);
+          resize: vertical;
+          color: #3b3b3b;
+          background-color: #fff;
+          border-color: #b1b1b1;
+          border-radius: 8px;
+          margin-top: .5rem;
+          max-height: 40em;
+          min-height: 8em;
+          height: 132px;
+        }
+        .anasayfa-icerik {
+          max-width: 768px;
+          margin-left: auto;
+          margin-right: auto;
+        }
+        form .row {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+        }
+
+
+      </style>
+    <div class="yan-menu">
+        <div class="profil">
+          <div class="profil-resmi">
+            <img src="resimler/resm.jpg" alt="trendyol" />
+          </div>
+          <div class="profil-body">
+            <h2>Ömer Karakeçe</h2>
+            <p>@omerkrkc</p>
+          </div>
+        </div>
+        <form class="form-inline my-2 my-lg-0" id="arama-form">
+          <div class="input-group">
+            <input type="text" class="form-control" placeholder="Arama filtresi" aria-label="Arama filtresi" aria-describedby="basic-addon1">
+          </div>
+        </form>
+        <nav>
+          <a class="nav-item" style="text-decoration: none;" href="AnaSayfa.html">
+            <div class="nav-item icon">
+              <img src="resimler/anasayfa.jpeg" />
+            </div>
+            Ana Sayfa
+          </a>
+          <a class="nav-item active" style="text-decoration: none;" href="ProfilVeSikayetler.html">
+            <div class="nav-item icon">
+              <img src="resimler/anlıksayfa.jpeg" />
+            </div>
+            Şikayetler ve Profil
+          </a>
+          <a class="nav-item" style="text-decoration: none;" href="#sikayetler">
+            <div class="nav-item icon">
+              <img src="resimler/mesaj.jpeg" />
+            </div>
+            Şikayetleri Gör
+          </a>
+          <a class="nav-item" style="text-decoration: none;" href="SıkayetCevapVerVeKapat.html">
+            <div class="nav-item icon">
+              <img src="resimler/cevapla.svg" />
+            </div>
+          Şikayetlere cevap ver veya kapat
+        </a>
+        <a class="nav-item" style="text-decoration: none;" href="LoginFactory.html">
+          <div class="nav-item icon">
+            <img src="resimler/cikis.jpeg" />
+          </div>
+          Çıkış
+        </a>
+      </nav>
+    </div>
+    <div class="anasayfa-icerik px-3 pt-4">
+      <h2 style="text-align: center;">Profil</h2>
+      <div class="form-ortala">
+        <form>
+          <div class="row mt-3">
+            <div class="col-md-4">
+              <label class="labels">Firma İsmi</label>
+              <input
+                type="text"
+                class="form-control"
+                disabled="disabled"
+                placeholder="Trendyol"
+                value=""
+              />
+            </div>
+            <div class="col-md-4">
+              <label class="labels">Firma Yetkilisi</label
+              ><input
+                type="text"
+                class="form-control"
+                disabled="disabled"
+                placeholder="Ömer Karakeçe"
+                value=""
+              />
+            </div>
+          </div>
+          <div class="row mt-3">
+            <div class="col-md-8">
+              <label class="labels">Yetkili Numarası</label
+              ><input
+                type="tel"
+                class="form-control"
+                disabled="disabled"
+                placeholder="0505 795 83 64"
+                value=""
+              />
+            </div>
+            <div class="col-md-8">
+              <label class="labels">Firmanız Hakkında</label>
+              <textarea
+                data-test-id="description-input"
+                name="description"
+                type="text"
+                maxlength="80"             
+                class="textarea is-mt-2"
+                style="height: 132px;"
+                disabled="disabled";
+                placeholder="Trendyol, merkezi İstanbul'da bulunan Türkiye merkezli bir e-ticaret platformudur. Trendyol, Trendyol Grup bünyesinde faaliyet göstermektedir. 2010 yılında Demet Mutlu tarafından kurulan Trendyol, moda ve perakende sektöründe uzmanlaşmış özel bir şirkettir.";
+              ></textarea>
+            </div>
+            <div class="col-md-8">
+              <label class="labels">E-Posta</label
+              ><input
+                type="text"
+                class="form-control"
+                disabled="disabled"
+                placeholder="omerkrkc@trendyol.com"
+                value=""
+              />
+            </div>
+            <div class="col-md-8">
+              <label class="labels">Şifre</label
+              ><input
+                type="password"
+                disabled="disabled"
+                class="form-control"
+                placeholder="*********"
+                value=""
+              />
+            </div>
+          </div>
+        </form>
+        <form>
+        <div class="py-5">
+          <div class="container">
+            <div class="row ">
+                <h2 id="sikayetler";style="text-align: center;margin-bottom:25px;">Şikayetler</h2>
+              <div class="col-lg-4 mb-3">
+                <div class="card border-danger">
+                  <div class="d-flex p-3 just-content-start align-items-center">
+                      <img src="resimler/1.jpg" alt="" style="height:5rem; width:5rem;border-radius:75%;">
+
+                      <div class="name-job-review">
+                        <p class="font-weight-bold mb-0">Canan Kılıç</p>
+                        <p class="text-danger mb-0">Bekliyor</p>
+
+                        <ul class="list-inline text-center  m-0">
+                          <li class="list-inline-item">21.12.2022 15:28</li>
+                        </ul>
+                      </div>
+                    </div>
+
+                    <div class="card-body">
+                      <blockquote class="blockquote">
+                        <p class="mb-0"><i class="fa-solid fa-quote-left text-danger "></i> 220101001 numaralı fotoğraf makinesinin içinden garanti belgesi çıkmadı.</p>
+                      </blockquote>
+                    </div>
+                </div>
+              </div>
+              <div class="col-lg-4 mb-3">
+                <div class="card border-danger">
+                  <div class="d-flex p-3 just-content-start align-items-center">
+                      <img src="resimler/2.jpg" alt="" style="height:5rem; width:5rem;border-radius:75%;">
+
+                      <div class="name-job-review">
+                        <p class="font-weight-bold mb-0">Zeliha Kırmızı</p>
+                        <p class="text-danger mb-0">Bekliyor</p>
+
+                        <ul class="list-inline text-center  m-0">
+                          <li class="list-inline-item">22.12.2022 19:38</li>
+                        </ul>
+                      </div>
+                    </div>
+                    
+                    <div class="card-body">
+                      <blockquote class="blockquote">
+                        <p class="mb-0"><i class="fa-solid fa-quote-left text-danger "></i>  220101008 numaralı ürünüm bozuk geldi ve hiç kimse ile irtibat kuramıyorum!</p>
+                      </blockquote>
+                    </div>
+                </div>
+              </div>
+              <div class="col-lg-4 mb-3">
+                <div class="card border-danger">
+                  <div class="d-flex p-3 just-content-start align-items-center">
+                      <img src="resimler/3.webp" alt="" style="height:5rem; width:5rem;border-radius:75%;">
+
+                      <div class="name-job-review">
+                        <p class="font-weight-bold mb-0">Ahmet Şentürk</p>
+                        <p class="text-danger mb-0">Bekliyor</p>
+
+                        <ul class="list-inline text-center  m-0">
+                          <li class="list-inline-item">23.12.2022 12:15</li>
+                        </ul>
+                      </div>
+                    </div>
+                    
+                    <div class="card-body">
+                      <blockquote class="blockquote">
+                        <p class="mb-0"><i class="fa-solid fa-quote-left text-danger "></i>  220101018 numaralı kazağım 1 ay olmadan sökülmeye başladı .</p>
+                      </blockquote>
+                    </div>
+                </div>
+              </div>
+              <div class="col-lg-4 mb-3">
+                <div class="card border-danger">
+                  <div class="d-flex p-3 just-content-start align-items-center">
+                      <img src="resimler/4.webp" alt="" style="height:5rem; width:5rem;border-radius:75%;">
+
+                      <div class="name-job-review">
+                        <p class="font-weight-bold mb-0">Ayşe Dinçer</p>
+                        <p class="text-danger mb-0">Bekliyor</p>
+
+                        <ul class="list-inline text-center  m-0">
+                          <li class="list-inline-item">26.12.2022 21:17</li>
+                        </ul>
+                      </div>
+                    </div>
+                    
+                    <div class="card-body">
+                      <blockquote class="blockquote">
+                        <p class="mb-0"><i class="fa-solid fa-quote-left text-danger "></i>  220101038 numaralı Elbisemin ilk yıkamada rengi soldu!</p>
+                      </blockquote>
+                    </div>
+                </div>
+              </div>
+              <div class="col-lg-4 mb-3">
+                <div class="card border-danger">
+                  <div class="d-flex p-3 just-content-start align-items-center">
+                      <img src="resimler/5.webp" alt="" style="height:5rem; width:5rem;border-radius:75%;">
+                      <div class="name-job-review">
+                        <p class="font-weight-bold mb-0">Erdinç Bayar</p>
+                        <p class="text-danger mb-0">Bekliyor</p>
+
+                        <ul class="list-inline text-center  m-0">
+                          <li class="list-inline-item">28.12.2022 08:23</li>
+                        </ul>
+                      </div>
+                    </div>
+                    
+                    <div class="card-body">
+                      <blockquote class="blockquote">
+                        <p class="mb-0"><i class="fa-solid fa-quote-left text-danger "></i> 220101042 numaralı Kışlık mont diye aldığım mont yazlık çıktı. </p>
+                      </blockquote>
+                    </div>
+                </div>
+              </div>
+              <div class="col-lg-4 mb-3">
+                <div class="card border-danger">
+                  <div class="d-flex p-3 just-content-start align-items-center">
+                      <img src="resimler/6.jpg" alt="" style="height:5rem; width:5rem;border-radius:75%;">
+                      <div class="name-job-review">
+                        <p class="font-weight-bold mb-0">Ali Candan</p>
+                        <p class="text-danger mb-0">Bekliyor</p>
+
+                        <ul class="list-inline text-center  m-0">
+                          <li class="list-inline-item">29.12.2022 10:45</li>
+                        </ul>
+                      </div>
+                    </div>
+                    
+                    <div class="card-body">
+                      <blockquote class="blockquote">
+                        <p class="mb-0"><i class="fa-solid fa-quote-left text-danger "></i>  220101054 numaralı laptop cihazın  tuş takımı kırık geldi.</p>
+                      </blockquote>
+                    </div>
+                </div>
+              </div>
+              <div class="col-lg-4 mb-3">
+                <div class="card border-danger">
+                  <div class="d-flex p-3 just-content-start align-items-center">
+                      <img src="resimler/7.jpg" alt="" style="height:5rem; width:5rem;border-radius:75%;">
+
+                      <div class="name-job-review">
+                        <p class="font-weight-bold mb-0">Buse Koçak</p>
+                        <p class="text-danger mb-0">Bekliyor</p>
+
+                        <ul class="list-inline text-center  m-0">
+                          <li class="list-inline-item">30.12.2022 23:25</li>
+                        </ul>
+                      </div>
+                    </div>
+                    
+                    <div class="card-body">
+                      <blockquote class="blockquote">
+                        <p class="mb-0"><i class="fa-solid fa-quote-left text-danger "></i> 220101064 numaralı ürünün satıcısı  iade kabul etmiyor. </p>
+                      </blockquote>
+                    </div>
+                </div>
+              </div>
+              <div class="col-lg-4 mb-3">
+                <div class="card border-danger">
+                  <div class="d-flex p-3 just-content-start align-items-center">
+                      <img src="resimler/8.jpg" alt="" style="height:5rem; width:5rem;border-radius:75%;">
+                      <div class="name-job-review">
+                        <p class="font-weight-bold mb-0">Koray Kaplan</p>
+                        <p class="text-danger mb-0">Bekliyor</p>
+
+                        <ul class="list-inline text-center  m-0">
+                          <li class="list-inline-item">31.12.2022 15:05</li>
+                        </ul>
+                      </div>
+                    </div>
+                    
+                    <div class="card-body">
+                      <blockquote class="blockquote">
+                        <p class="mb-0"><i class="fa-solid fa-quote-left text-danger "></i> 220101078 numaralı orijinal denilen parfüm replika geldi.</p>
+                      </blockquote>
+                    </div>
+                </div>
+              </div>
+              <div class="col-lg-4 mb-3">
+                <div class="card border-danger">
+                  <div class="d-flex p-3 just-content-start align-items-center">
+                      <img src="./resimler/9.jpg" alt="" style="height:5rem; width:5rem;border-radius:75%;">
+                      <div class="name-job-review">
+                        <p class="font-weight-bold mb-0">Aleyna Varol</p>
+                        <p class="text-danger mb-0">Bekliyor</p>
+
+                        <ul class="list-inline text-center  m-0">
+                          <li class="list-inline-item">01.01.2023 14:20</li>
+                        </ul>
+                      </div>
+                    </div>
+                    
+                    <div class="card-body">
+                      <blockquote class="blockquote">
+                        <p class="mb-0"><i class="fa-solid fa-quote-left text-danger "></i>220101085 numaralı yılbaşı süsleri eksik gönderilmiş. </p>
+                      </blockquote>
+                    </div>
+                </div>
+              </div>
+              <div class="col-lg-4 mb-3">
+                <div class="card border-danger">
+                  <div class="d-flex p-3 just-content-start align-items-center">
+                      <img src="resimler/10.jpg" alt="" style="height:5rem; width:5rem;border-radius:75%;">
+
+                      <div class="name-job-review">
+                        <p class="font-weight-bold mb-0">Şeyma Aslan</p>
+                        <p class="text-danger mb-0">Bekliyor</p>
+
+                        <ul class="list-inline text-center  m-0">
+                          <li class="list-inline-item">02.02.2022 18:27</li>
+                        </ul>
+                      </div>
+                    </div>
+                    
+                    <div class="card-body">
+                      <blockquote class="blockquote">
+                        <p class="mb-0"><i class="fa-solid fa-quote-left text-danger "></i>Firmanız çok ilgisiz günlerdir ulaşmaya çalışıyorum. Kimse umursamıyor.</p>
+                      </blockquote>
+                    </div>
+                </div>
+              </div>
+              <div class="col-lg-4 mb-3">
+                <div class="card border-danger">
+                  <div class="d-flex p-3 just-content-start align-items-center">
+                      <img src="resimler/11.jpg" alt="" style="height:5rem; width:5rem;border-radius:75%;">
+
+                      <div class="name-job-review">
+                        <p class="font-weight-bold mb-0">Timuçin Sarı</p>
+                        <p class="text-danger mb-0">Bekliyor</p>
+
+                        <ul class="list-inline text-center  m-0">
+                          <li class="list-inline-item">03.03.2022 19:34</li>
+                        </ul>
+                      </div>
+                    </div>
+                    
+                    <div class="card-body">
+                      <blockquote class="blockquote">
+                        <p class="mb-0"><i class="fa-solid fa-quote-left text-danger "></i>Kartımdan ürün için para çekildi fakat ürün satın alınmış gözükmüyor.</i></p>
+                      </blockquote>
+                    </div>
+                </div>
+              </div>
+              <div class="col-lg-4 mb-3">
+                <div class="card border-danger">
+                  <div class="d-flex p-3 just-content-start align-items-center">
+                      <img src="resimler/12.jpg" alt="" style="height:5rem; width:5rem;border-radius:75%;">
+
+                      <div class="name-job-review">
+                        <p class="font-weight-bold mb-0">Eray Tokdam</p>
+                        <p class="text-danger mb-0">Bekliyor</p>
+
+                        <ul class="list-inline text-center  m-0">
+                          <li class="list-inline-item">04.04.2022 04:38</li>
+                        </ul>
+                      </div>
+                    </div>
+                    
+                    <div class="card-body">
+                      <div class="blockquote">
+                        <p class="mb-0"><i class="fa-solid fa-quote-left text-danger "></i>220101132 numaralı trendyol yemek hediye çeki önceden kullanılmış ! </p>
+                      </div>
+                    </div>
+                </div>
+              </div>
+            </div>  
+          </div>
+        </div> 
+        </form>
+      </div>
+    </div>
+<script>
+    document.getElementById('arama-form').addEventListener('submit', function(e) 
+    {
+    e.preventDefault(); 
+    var aramaMetni = this.querySelector('input').value;
+    var kartlar = document.querySelectorAll('.card ,.card .border-danger');
+    for (var i = 0; i < kartlar.length; i++) 
+    {
+    var kart = kartlar[i];
+    var kartIcerigi = kart.querySelector('.name-job-review,.list-inline.text-center.m-0 ').innerHTML;
+    var kartIcerigi2 = kart.querySelector('.card-body').innerHTML;
+    if (kartIcerigi.includes(aramaMetni) || kartIcerigi2.includes(aramaMetni)) 
+    {    
+        kart.style.display = 'block';
+    } 
+    else 
+    {
+        kart.style.display = 'none';
+    }
+    }
+});
+</script>
+    <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js"></script>
+    <script src="https://pingendo.com/assets/bootstrap/bootstrap-4.0.0-alpha.6.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>

@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Firma Giriş</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="stylesheet" href ="CSS.css">
+    <link rel="stylesheet" href ="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css">
+
+</head>
+<body>
+    <section>
+        <div class="container">
+            <!--Giriş Yap Formu-->
+            <div class="user singinBx">
+                <div class="imgBx"><img src="Employee-Satisfaction-Survey.png"></div>
+                <div class="formBx">
+                    <form>
+                        <h2>Giriş Yap</h2>
+                        <input type="text" id="username" name="" placeholder="Kullanıcı Adı">
+                        <input type="password" id="password" name=""  placeholder="Şifrenizi Girin">
+                        <input type="submit" onclick="kullaniciGirisOnayi();" name="" value="Giriş Yap">
+                        <p class="signup"><a href="#" onclick="toggleForm();">Hesabınız Yoksa Hemen Kayıt Olun</a></p>
+                    </form>
+                </div>
+            </div>
+
+            <!--Kayıt Ol Formu-->
+            <div class="user singupBx">
+                <div class="formBx">
+                    <form id="register-form">
+                        <h2>Kayıt Ol</h2>
+                        <input type="text" id="username" name="" placeholder="Kullanıcı Adınızı Girin">
+                        <input type="email" id="email" name="" placeholder="Email Adresinizi Girin">
+                        <input type="password" id="password" name="" placeholder="Şifrenizi Girin">
+                        <input type="password" id="passwordval"name="" placeholder="Şifrenizi Tekrarlayın">
+                        <input type="submit" name="" value="Kayıt Ol">
+                        <p class="signup"><a href="#" onclick="toggleForm();">Hesabın Varsa Hemen Giriş Yap</a></p>
+                    </form>
+                </div>
+                <div class="imgBx"><img src="customer-satisfaction-tips-better-content-for-business-sucess-blog-1.png"></div>
+            </div>
+        </div>
+    </section>
+
+
+    <style>
+        @import url(https://fonts.googleapis.com/css?family=Raleway:400,100,200,300);
+ 
+ *{
+     margin: 0;
+     padding: 0;
+     box-sizing: border-box;
+     font-family: 'Poppins', sans-serif;
+ }
+  
+ section{
+     position: relative;
+     min-height: 100vh;
+     background: #b3b2e5 ;
+     display: flex;
+     justify-content: center;
+     align-items: center;
+     padding: 20px;
+ }
+  
+ section .container{
+     position: relative;
+     width: 800px;
+     height: 500px;
+     background: #ffffff ;
+     box-shadow: 0 15px 50px rgba(0, 0, 0, 0.1);
+     overflow: hidden;
+ }
+  
+ section .container .user{
+     position: absolute;
+     top: 0;
+     left: 0;
+     width: 100%;
+     height: 100%;
+     display: flex;
+ }
+  
+ section .container .user .imgBx{
+     position: relative;
+     width: 50%;
+     height: 100%;
+     background: #ff0;
+     transition: 0.5s;
+ }
+  
+ section .container .user .imgBx img{
+     position: absolute;
+     top: 0;
+     left: 0;
+     width: 100%;
+     height: 100%;
+     object-fit: cover;
+ }
+  
+ section .container .user .formBx{
+     position: relative;
+     width: 50%;
+     height: 100%;
+     background: #fff;
+     display: flex;
+     justify-content: center;
+     align-items: center;
+     padding: 40px;
+     transition: 0.5s;
+ }
+  
+ section .container .user .formBx h2{
+     font-size: 18px;
+     font-weight: 600;
+     text-transform: uppercase;
+     letter-spacing: 2px;
+     text-align: center;
+     width: 100%;
+     margin-bottom: 10px;
+     color: #555;
+ }
+  
+ section .container .user .formBx input{
+     position: relative;
+     width: 100%;
+     padding: 10px;
+     background: #f5f5f5;
+     color: #333;
+     border: none;
+     box-shadow: none;
+     margin: 8px 0;
+     font-size: 14px;
+     letter-spacing: 1px;
+     font-weight: 300;
+ }
+  
+ section .container .user .formBx input[type="submit"]{
+     max-width: 100px;
+     background: #677eff;
+     color: #fff;
+     cursor: pointer;
+     font-size: 14px;
+     font-weight: 500;
+     letter-spacing: 1px;
+     transition: 0.5s;
+ }
+  
+ section .container .user .formBx .signup{
+     position: relative;
+     margin-top: 20px;
+     font-size: 12px;
+     letter-spacing: 1px;
+     color: #555;
+     text-transform: uppercase;
+     font-weight: 300;
+ }
+  
+ section .container .user .formBx .signup a{
+  font-weight: 600;   
+  text-decoration: none;
+  color: #677eff;
+ }
+  
+ section .container .singupBx{
+     pointer-events: none;
+ }
+  
+ section .container.active .singupBx{
+     pointer-events: initial;
+ }
+  
+ section .container .singupBx .formBx{
+     left: 100%;
+ }
+  
+ section .container.active .singupBx .formBx{
+     left: 0;
+ }
+  
+ section .container .singupBx .imgBx{
+     left: -100%;
+ }
+  
+ section .container.active .singupBx .imgBx{
+     left: 0;
+ }
+
+ section .container .singinBx .formBx{
+     left: 0;
+ }
+  
+ section .container.active .singinBx .formBx{
+     left: 100%;
+ }
+  
+ section .container .singinBx .imgBx{
+     left: 0;
+ }
+  
+ section .container.active .singinBx .imgBx{
+     left: -100%;
+ }
+  
+ @media (max-width: 991px) {
+     section .container{
+         max-width: 400px;
+     }
+  
+     section .container .imgBx{
+         display: none;
+     }
+  
+     section .container .user .formBx{
+         width: 100%;
+     }
+ }
+
+    </style>
+
+    <script>
+        var kullanicilar = [
+    {username:"admin",password:"123"},
+    {username:"trendyol",password:"Alibaba"},
+    {username:"instagram",password:"MetaInc"},
+    {username:"udemy",password:"ErenBali"}];
+
+var girilenKullaniciAdi;
+var girilenParola;
+var  kontrol;   
+function kontrolEt(){
+
+    girilenKullaniciAdi = document.getElementById("username").value;
+    girilenParola = document.getElementById("password").value;
+
+    for(kontrol of kullanicilar) 
+    {
+        if((kontrol.username==girilenKullaniciAdi) && (kontrol.password==girilenParola))
+        {
+            return true;
+
+        }
+    }
+}
+function kullaniciGirisOnayi()
+{
+    kontrolEt();
+    if(kontrolEt())
+    {
+        window.open("ProfilVeSikayetler.html","_blank");
+    }
+    else
+    {
+        alert("Hatalı kullanıcı adı  ya da parola. Yeniden deneyiniz...")
+    }
+
+}
+
+
+
+// Kayıt ol formu
+const registerForm = document.querySelector('#register-form');
+
+// Forma gönderme olay dinleyicisi 
+registerForm.addEventListener('submit', function(event) {
+  // Önleme olayı
+  event.preventDefault();
+
+  // bilgileri al 
+  const username = registerForm.elements.username.value;
+  const password = registerForm.elements.password.value;
+  const passwordval = registerForm.elements.passwordval.value;
+  const email = registerForm.elements.email.value;
+
+  // Kontrol
+  if (username.length === 0) {
+    alert('Lütfen bir kullanıcı adı girin');
+    return;
+  }
+  if (password.length === 0) {
+    alert('Lütfen bir parola girin');
+    return;
+  }
+  if (email.length === 0) {
+    alert('Lütfen bir e-posta girin');
+    return;
+  }
+
+  // objectte sakladım
+  const user = {
+    username: username,
+    password: password,
+    passwordval:password,
+    email: email
+  };
+
+  // göster ve temizle
+  alert('Kaydınız başarıyla oluşturuldu');
+  registerForm.reset();
+});
+    </script>
+    <script src="JS.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"> </script>
+<script type="text/javascript">
+        function toggleForm(){
+            var container = document.querySelector('.container');
+            container.classList.toggle('active')
+        }
+    </script>
+</body>
+</html>

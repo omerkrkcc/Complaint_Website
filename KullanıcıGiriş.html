@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kullanıcı Giriş</title>
+    <link rel="stylesheet" href="CSS.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <script src="JS.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.2/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.lordicon.com/fudrjiwc.js"></script>
+    <script src="JS.js"></script>
+    
+</head>
+
+<style>
+    a{
+            font-size: x-large;
+        }
+</style>
+
+    
+    <body >
+        <div class="login-dark" style="height: 100vh;">
+            <form>
+                
+                <div class="logo">
+                        <lord-icon
+                        src="https://cdn.lordicon.com/dqxvvqzi.json"
+                        trigger="hover"
+                        style="width:250px;height:250px">
+                        </lord-icon>
+                </div>
+                <div class="form-group" ><input required id="kullaniciAdi"  class="form-control" type="text" name="email" placeholder="Kullanıcı Adınız:"></div>
+                <div class="form-group"><input required id="sifre" class="form-control" type="text" name="password" placeholder="Şifreniz:"></div>
+                <div class="form-group"><button id="girisYap"  class="btn btn-primary btn-block">GİRİŞ YAP</button></div>
+        </div>
+        <script> 
+
+            $(function(){
+                $("#girisYap").click(function(){
+                    let x="";
+                    x=$("#kullaniciAdi").val();
+                    let y="";
+                    y=$("#sifre").val();
+
+
+                       if( (x=="isaer" && y==2222 )  || (x=="süleymancakir" && y==4444) ||          (x=="mematibas" &&y ==3333)  ){
+                            alert("HOŞGELDİNİZ    "+x);
+                            window.open("KullanıcıMain.html","_blank");
+                            
+                       }
+                       else{
+                        alert("Kullanıcı Adı veya Parola Yanlış");
+                        
+                       }
+
+
+                       
+                    
+                });
+            });
+
+           
+
+
+        </script>
+        
+ 
+</body>
+</html>

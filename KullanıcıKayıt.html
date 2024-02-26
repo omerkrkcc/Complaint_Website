@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+  <meta http-equiv="x-ua-compatible" content="ie=edge" />
+  <title>Kullanıcı Kayıt</title>
+  <link rel="stylesheet" href="CSS.css">
+  
+  <!-- MDB icon -->
+  <link rel="icon" href="img/mdb-favicon.ico" type="image/x-icon" />
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" />
+  <!-- Google Fonts Roboto -->
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap" />
+  <!-- MDB -->
+  <!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+
+<!-- jQuery library -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+
+<!-- Latest compiled JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.2.2/js/bootstrap.min.js" ></script>
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.2.2/css/bootstrap.min.css" integrity="sha512-CpIKUSyh9QX2+zSdfGP+eWLx23C8Dj9/XmHjZY2uDtfkdLGo0uY12jgcnkX9vXOgYajEKb/jiw67EYm+kBf+6g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,400;1,700&family=Montserrat:wght@200&family=Roboto:wght@100;400&family=Varela+Round&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+<style>
+
+  body{
+    font-size:2rem;
+    font-family: 'Varela Round', sans-serif;
+    background-image: linear-gradient(to right top, #2b3a55, #283f55, #294354, #2d4752, #344a50, #3a5052, #435653, #4d5c55, #5d6659, #706e5e, #847668, #967e76);
+  }
+  
+
+
+
+a{
+  text-decoration: none;
+  color: rgb(233, 132, 9);
+  font-size:x-large;
+}
+a:hover{
+  text-decoration: none;
+  color: rgb(228, 90, 9);
+}
+
+.b{
+  color: #d59662;
+}
+
+.c{
+  color: darkblue;
+  font-weight: 600;
+  font-size:x-large;
+}
+
+.card{
+    background-color: #377D71;
+}
+
+</style>
+
+  <section class="vh-100 bg-image" id="section">
+  <div class="mask d-flex align-items-center h-100 gradient-custom-3">
+    <div class="container h-100">
+      <div class="row d-flex justify-content-center align-items-center h-100">
+        <div class="col-12 col-md-9 col-lg-7 col-xl-6">
+          <div class="card" style="border-radius: 30px;">
+            <div class="card-body p-5">
+              <h2 class="text-uppercase text-center mb-5 c">KULLANICI KAYIT </h2>
+
+              <form>
+
+                <div class="form-outline mb-4 b">
+                  <input required placeholder="İsim ve Soyisim Giriniz..." type="text" id="form3Example1cg" class="form-control form-control-lg" />
+                  <label class="form-label" for="form3Example1cg">İsim Soyisim</label>
+                </div>
+
+                <div class="form-outline mb-4 b">
+                  <input required placeholder="Kullanıcı Adı Giriniz..." type="email" id="form3Example3cg" class="form-control form-control-lg" />
+                  <label class="form-label" for="form3Example3cg">Kullanıcı Adı</label>
+                </div>
+
+                <div class="form-outline mb-4 b">
+                  <input required placeholder="E-mail Adresinizi Giriniz..." type="text" id="form3Example4cg" class="form-control form-control-lg" />
+                  <label class="form-label" for="form3Example4cg">E-mail</label>
+                </div>
+
+                <div class="form-outline mb-4 b">
+                  <input required placeholder="Şifrenizi Giriniz..." type="password" id="form3Example4cdg" class="form-control form-control-lg" />
+                  <label class="form-label" for="form3Example4cdg">Şifre</label>
+                </div>
+
+                
+
+                <div class="d-flex justify-content-center">
+                  <button type="button"
+                    class="btn btn-success btn-block btn-lg gradient-custom-4 text-body"><a id="kayitOl" href="KullanıcıGiriş.html">Kayıt Ol</a></button>
+                </div>
+
+               
+
+              </form>
+
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+  <script>
+    $(function(){
+      $("#kayitOl").click(function(){
+        alert("Kayıt Başarılı");
+      });
+    });
+  </script>
+
+  <!-- MDB -->
+  <script type="text/javascript" src="js/mdb.min.js"></script>
+  <!-- Custom scripts -->
+  <script type="text/javascript"></script>
+</body>
+
+</html>

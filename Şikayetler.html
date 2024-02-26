@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="author" content="CodeHim">
+    <title>Şikayetlerim</title>
+    <head>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+        </head>
+    
+    
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
+    
+    <link rel="stylesheet" href="css/style.css">
+	
+	<link rel="stylesheet" href="CSS.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  
+  </head>
+  <body>
+ 
+ <style>
+
+    .kalemicon{
+        font-size: small;
+        background-color: aliceblue;
+        color: blue;
+    }
+
+
+    .col-8 h3{
+        color: #0E5E6F;
+    }
+    .a{
+        font-size: .6rem;
+        color:#CE7777;
+        
+    }
+    .satır{
+        background-color: #F2E5E5;
+
+    }
+
+    .col-4 i{
+        font-size: x-large;
+        color: blue;
+    }
+
+    .col-4 button{
+        margin: 5px;
+    }
+
+    .yesil{
+        color: rgb(30, 205, 7);
+    }
+
+    .col-3{
+        margin-right: 0;
+    }
+
+    .col-2{
+        margin-left: 0;
+    }
+
+    .col-2 i,.col-1 i{
+        font-size: x-large;
+    }
+
+   
+
+    .h1{
+        color: rgb(44, 81, 150);
+    }
+
+    .takvim{
+        color: darkgoldenrod;
+        font-size: xx-large;
+    }
+
+    .col-1 h6{
+        color: darkgreen;
+    }
+
+    .col-8 h5{
+        font-weight: 800;
+        font-style:oblique;
+        color: #85586F;
+    }
+
+    .h4{
+        font-size: 1.1rem;
+    }
+
+    body{
+        background-image: linear-gradient(to right, #495579, #316782, #2f757d, #4c8171, #718967);
+    }
+
+
+    
+    
+ </style>
+  
+
+
+      
+ <main style="position: relative; text-align: center; "  >
+    
+         <div class=" container rounded-3 border border-5 border-success my-5 bg-white" style="height:auto;">
+        <div>
+        <h1 class=" h1">ŞİKAYET EKLE</h1> 
+
+        <div class="row">
+            <div class=" col-10">
+                <input id="firmaadi" class=" py-3 form-control shadow" placeholder="Firma Adını Yaz..." type="text" > 
+            </div> <br><br><br><br>
+            <div class=" col-10">
+                <input id="baslik" class=" py-3 form-control shadow" placeholder="Konu Başlığı Yazınız..." type="text" > 
+            </div><br><br><br><br>
+            <div class=" col-10">
+                <input  class=" py-3 form-control shadow" placeholder="Şikayetinizi Yazınız..." type="text" id="inputText"> 
+            </div>
+
+            <div class="col-2">
+                <i onclick="addList()" class=" eklemeeventi kalemicon btn btn-dark rounded-pill fas fa-4x fa-plus-circle "></i>
+                <button id="ekle" onclick="addList()" class=" eklemeeventi mt-2 btn btn-success"> EKLE</button>
+            </div>
+        </div>
+
+    </div>
+        <hr>
+    <div class="row rounded bg-primary">
+        <div class="  col-12"> 
+        <ul class=" list-group" id="list"></ul>
+        </div> 
+    </div> 
+    
+    </div>
+    
+ </main> 
+ <br>
+
+ <div class="baslik" style="position: absolute; left: 42%;">
+    <button class="btn btn-primary btn-lg text-center getir">AÇIK ŞİKAYETLERİ GÖSTER</button> <hr>
+    
+</div> <br><br><br><br><br>
+
+<div id="eskisikayetler" class="satır col-9" style="  position: absolute; left: 14%;">
+
+                <li class=" my-3 py-3 shadow list-group-item " >
+                    <div class="row a">
+                    
+                        <div class="col-8">
+                            <h3>HEPSİBURADA</h3>
+                            <h5>Hepsiburada Orijinal Telefon Satmıyor!</h5>
+                            <span class=" h4 icerik1" > Hepsiburada IMEI klonlanmış Cep Telefonu satıyor ve orijinal ürün göndermeyerek müşterinin mağdur olmasına sebep oluyor. Aldığım zaman ile şimdi arasında fiyat farkı var ve aynı ürünü alamıyorum. Orijinal ürün gönderimi istememe rağmen para iadesi yapılmıyor </span>
+                        </div>
+
+                        <div class="col-2 ">    
+                            <i  style="color:green;" class="fa-solid fa-pen yesil"></i>
+                            <button  class=" duzenle1  btn btn-primary" >DÜZENLE</button> <br>
+                        </div>
+
+                        <div class="col-1">
+                            <i  style="color:red;" class="fa-solid fa-trash"></i>
+                            <button class=" sil btn btn-primary" >SİL</button>
+                        </div>
+
+                        <div class="col-1">
+                            <i  class="fa-solid fa-calendar takvim"></i>
+                            <h6 id="tarih">2 GÜN</h6>
+                        </div>
+                        
+                           
+                        
+
+                      <div class="input-group mb-3" id="input">
+                        <input id="textbox" type="text" class="form-control" placeholder="Düzenleyin" aria-label="Recipient's username" aria-describedby="basic-addon2">
+                        <div class="input-group-append">
+                          <button id="button1" class="btn btn-outline-secondary" type="button">TAMAM</button>
+                        </div>
+                      </div>
+
+                </li>
+                
+                
+
+                <li class=" my-3 py-3 shadow list-group-item " >
+                    <div class="row a">
+                    
+                        <div class="col-8 ">
+                            <h3>BEIN CONNECT</h3>
+                            <h5>Bein Connect Giriş Yapamıyorum</h5>
+                            <span class=" h4 icerik2" >Bein Connect giriş yapamıyorum doğru şifreyi giriyorum üyeliğiniz bu paket yoktur hatası veriyor. Vatandaş mağdur etme başka bir yolu yok müşteri temsilcisi zaten bağlanmıyor tod diye bir bölüme para verelim diye böyle bir yol çizmişler milleti mağdur etmeye gerek yok.</span>
+                        </div>
+
+                        <div class="col-2 ">    
+                            <i  style="color:green;" class="fa-solid fa-pen yesil"></i>
+                            <button  class=" duzenle2  btn btn-primary" >DÜZENLE</button> <br>
+                        </div>
+
+                        <div class="col-1">
+                            <i  style="color:red;" class="fa-solid fa-trash"></i>
+                            <button class=" sil btn btn-primary">SİL</button>
+                        </div>
+
+                        <div class="col-1">
+                            <i  class="fa-solid fa-calendar takvim"></i>
+                            <h6 id="tarih2">3 GÜN</h6>
+                        </div>
+                                      
+                     </div>    
+
+                      <div class="input-group mb-3" id="input2">
+                        <input id="textbox2" type="text" class="form-control" placeholder="Düzenleyin" aria-label="Recipient's username" aria-describedby="basic-addon2">
+                        <div class="input-group-append">
+                          <button id="button2" class="btn btn-outline-secondary" type="button">TAMAM</button>
+                        </div>
+                      </div>
+
+                </li>
+
+
+                <li class=" my-3 py-3 shadow list-group-item " >
+                    <div class="row a">
+                    
+                        <div class="col-8 ">
+                            <h3>KOTON</h3>
+                            <h5>Koton.com Para İademi Yapmıyor</h5>
+                            <span class=" h4 icerik3" >Koton.com üzerinden 2124562870124536 sipariş numarası ile alışveriş yaptım. Ürünü iade ettim. İade ücreti kartıma yansımadı. Müşteri hizmetleri ile görüştüm, 10 güne yansır dendi fakat 1 ay geçmesine rağmen iade ücreti tarafıma yansımadı. Müşteri temsilcileri çözüm odaklı değil.</span>
+                        </div>
+
+                        <div class="col-2 ">    
+                            <i  style="color:green;" class="fa-solid fa-pen yesil"></i>
+                            <button  class=" duzenle3  btn btn-primary" >DÜZENLE</button> <br>
+                        </div>
+
+                        <div class="col-1">
+                            <i  style="color:red;" class="fa-solid fa-trash"></i>
+                            <button class=" sil btn btn-primary">SİL</button>
+                        </div>
+
+                        <div class="col-1">
+                            <i  class="fa-solid fa-calendar takvim"></i>
+                            <h6 id="tarih3">3 GÜN</h6>
+                        </div>
+                                      
+                     </div>    
+
+                      <div class="input-group mb-3" id="input3">
+                        <input id="textbox3" type="text" class="form-control" placeholder="Düzenleyin" aria-label="Recipient's username" aria-describedby="basic-addon2">
+                        <div class="input-group-append">
+                          <button id="button3" class="btn btn-outline-secondary" type="button">TAMAM</button>
+                        </div>
+                      </div>
+
+                </li>
+
+
+
+
+
+                <li class=" my-3 py-3 shadow list-group-item " >
+                    <div class="row a">
+                    
+                        <div class="col-8 ">
+                            <h3>SAHİBİNDEN</h3>
+                            <h5>Sahibinden Hata Kodu 0</h5>
+                            <span class=" h4 icerik4" >Sahibinden sitesinde ilan verdim. Birkaç gün sonra hata kodu 0 diye uyarı veriyor ve düzelmiyor hesaba giriş yapamıyorum. İlanımı takip edemiyorum. Ne yaptıysam olmadı. Bir kere daha böyle yaptı ama düzeldi. Şimdi düzelmiyor. Lütfen bir önce sorunu çözer misiniz. Teşekkürler şimdiden</span>
+                        </div>
+
+                        <div class="col-2 ">    
+                            <i  style="color:green;" class="fa-solid fa-pen yesil"></i>
+                            <button  class=" duzenle4  btn btn-primary" >DÜZENLE</button> <br>
+                        </div>
+
+                        <div class="col-1">
+                            <i  style="color:red;" class="fa-solid fa-trash"></i>
+                            <button class=" sil btn btn-primary">SİL</button>
+                        </div>
+
+                        <div class="col-1">
+                            <i  class="fa-solid fa-calendar takvim"></i>
+                            <h6 id="tarih4">7 GÜN</h6>
+                        </div>
+                                      
+                     </div>    
+
+                      <div class="input-group mb-3" id="input4">
+                        <input id="textbox4" type="text" class="form-control" placeholder="Düzenleyin" aria-label="Recipient's username" aria-describedby="basic-addon2">
+                        <div class="input-group-append">
+                          <button id="button4" class="btn btn-outline-secondary" type="button">TAMAM</button>
+                        </div>
+                      </div>
+
+                </li>
+
+
+                
+                <li class=" my-3 py-3 shadow list-group-item " >
+                    <div class="row a">
+                    
+                        <div class="col-8 ">
+                            <h3>TÜRKİYE FUTBOL FEDERASYONU</h3>
+                            <h5>TFF Tescil İşlemleri</h5>
+                            <span class=" h4 icerik5" >Türkiye Futbol Federasyonu il temsilciliği amatör dernekleri 1 yıldır tescil etmiyor. Nedeni ise Gençlik Spor bakanlığı ® deniliyor. Spor dernekleri tescil ücretlerine 35.000 TL ücret veriyor. Lisans saha ve diğer giderler ile yılda 150.000 TL masrafı olan ve hiç geliri olmayan dernekler ve kulüpler bir de bu temsilciliklerde çalışanlardan azar işitiyor.</span>
+                        </div>
+
+                        <div class="col-2 ">    
+                            <i  style="color:green;" class="fa-solid fa-pen yesil"></i>
+                            <button  class=" duzenle5  btn btn-primary" >DÜZENLE</button> <br>
+                        </div>
+
+                        <div class="col-1">
+                            <i  style="color:red;" class="fa-solid fa-trash"></i>
+                            <button class=" sil btn btn-primary">SİL</button>
+                        </div>
+
+                        <div class="col-1">
+                            <i  class="fa-solid fa-calendar takvim"></i>
+                            <h6 id="tarih5">7 GÜN</h6>
+                        </div>
+                                      
+                     </div>    
+
+                      <div class="input-group mb-3" id="input5">
+                        <input id="textbox5" type="text" class="form-control" placeholder="Düzenleyin" aria-label="Recipient's username" aria-describedby="basic-addon2">
+                        <div class="input-group-append">
+                          <button id="button5" class="btn btn-outline-secondary" type="button">TAMAM</button>
+                        </div>
+                      </div>
+
+                </li>
+
+
+                
+                <li class=" my-3 py-3 shadow list-group-item " >
+                    <div class="row a">
+                    
+                        <div class="col-8 ">
+                            <h3>E-DEVLET</h3>
+                            <h5>E Devlet Sosyal Yardim</h5>
+                            <span class=" h4 icerik6" >2 ay önce elektrik ve gaz yardımında bulundum gida yardımı bile olur dedim ama evi arabası olan kisiler tüm yardımları alabilirken ben asgari ücretliyim maaşımın 4/1 biri icraya kesilmesine rağmen başvurum reddedildi cidden ayrımcılık ve kendi adamlarına veriyorlar</span>
+                        </div>
+
+                        <div class="col-2 ">    
+                            <i  style="color:green;" class="fa-solid fa-pen yesil"></i>
+                            <button  class=" duzenle6  btn btn-primary" >DÜZENLE</button> <br>
+                        </div>
+
+                        <div class="col-1">
+                            <i  style="color:red;" class="fa-solid fa-trash"></i>
+                            <button class=" sil btn btn-primary">SİL</button>
+                        </div>
+
+                        <div class="col-1">
+                            <i  class="fa-solid fa-calendar takvim"></i>
+                            <h6 id="tarih6">8 GÜN</h6>
+                        </div>
+                                      
+                     </div>    
+
+                      <div class="input-group mb-3" id="input6">
+                        <input id="textbox6" type="text" class="form-control" placeholder="Düzenleyin" aria-label="Recipient's username" aria-describedby="basic-addon2">
+                        <div class="input-group-append">
+                          <button id="button6" class="btn btn-outline-secondary" type="button">TAMAM</button>
+                        </div>
+                      </div>
+
+                </li>
+
+
+</div>
+
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-U1DAWAznBHeqEIlVSCgzq+c9gqGAJn5c/t99JyeKa9xxaYpSvHU5awsuZVVFIhvj" crossorigin="anonymous"></script>
+     
+
+<script src="JS.js"></script>
+  </body>
+</html>
